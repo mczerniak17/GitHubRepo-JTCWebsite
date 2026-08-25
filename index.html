@@ -532,7 +532,7 @@
             <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Golf video player">
                 <button class="video-modal-close" id="videoModalClose" type="button" aria-label="Close video">&times;</button>
                 <div class="video-modal-player">
-                    <iframe id="videoModalFrame" title="Golf swing video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe id="videoModalFrame" title="Golf swing video" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -578,7 +578,7 @@
                 if (!videoId) return;
 
                 lastVideoTrigger = trigger;
-                videoModalFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
+                videoModalFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
                 videoModal.classList.add('open');
                 videoModal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
